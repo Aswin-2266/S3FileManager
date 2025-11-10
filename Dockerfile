@@ -5,7 +5,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create the final, slim image to run the app
-FROM eclipse-temurin:17-jdk-slim-focal
+FROM eclipse-temurin:17-jre-focal
 WORKDIR /app
 COPY --from=build /src/target/*.jar app.jar
 
