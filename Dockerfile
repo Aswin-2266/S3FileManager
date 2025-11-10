@@ -5,7 +5,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create the final, slim image to run the app
-FROM openjdk:17-slim
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /src/target/*.jar app.jar
 
