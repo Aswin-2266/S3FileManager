@@ -1,5 +1,5 @@
 # Stage 1: Build the .jar file with Maven
-FROM eclipse-temurin:17-jdk-focal AS build
+FROM maven:3.8-eclipse-temurin-17 AS build
 WORKDIR /src
 COPY . .
 RUN mvn clean package -DskipTests
